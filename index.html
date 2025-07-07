@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Will you go out with me?</title>
+  <link href="https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #fde2e2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: 'Leckerli One', cursive;
+    }
+
+    .wrapper {
+      text-align: center;
+      background: #fff;
+      padding: 30px 20px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    .question {
+      margin-bottom: 20px;
+      font-size: 2rem;
+      color: #333;
+    }
+
+    .gif {
+      width: 200px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .yes-btn {
+      background: #28a745;
+      color: white;
+    }
+
+    .no-btn {
+      background: #dc3545;
+      color: white;
+      position: relative;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <h2 class="question">Will you go out with me?</h2>
+    <img class="gif" alt="gif" src="https://media.giphy.com/media/FTGah7Mx3ss04PcasF/giphy.gif" />
+    <div class="btn-group">
+      <button class="yes-btn" onclick="alert('Yay!! 🥰 Can’t wait!')">Yes</button>
+      <button class="no-btn">No</button>
+    </div>
+  </div>
+
+  <script>
+    const noBtn = document.querySelector('.no-btn');
+
+    noBtn.addEventListener('mouseover', () => {
+      const parent = noBtn.parentElement;
+      const yesBtn = parent.querySelector('.yes-btn');
+
+      const yesRect = yesBtn.getBoundingClientRect();
+      const noRect = noBtn.getBoundingClientRect();
+
+      yesBtn.style.transform = `translateX(${noRect.left - yesRect.left}px)`;
+      noBtn.style.transform = `translateX(${yesRect.left - noRect.left}px)`;
+
+      parent.insertBefore(noBtn, yesBtn);
+    });
+
+    noBtn.addEventListener('click', () => {
+      alert("C'mon, say Yes! 💖");
+    });
+  </script>
+</body>
+</html>
