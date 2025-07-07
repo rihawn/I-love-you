@@ -2,42 +2,39 @@
 <html lang="sr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Volim te, princezo</title>
   <link href="https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap" rel="stylesheet" />
   <style>
     body {
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+      margin: 0; padding: 0;
+      height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
+      background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
       font-family: 'Leckerli One', cursive;
-      color: #fff;
+      color: white;
       text-shadow: 0 2px 4px rgba(0,0,0,0.3);
     }
-
-    .message {
-      font-size: 2.5rem;
-      margin-top: 20px;
-      text-align: center;
-      padding: 10px 20px;
-      background: rgba(255, 255, 255, 0.15);
-      border-radius: 12px;
-    }
-
-    .gif {
+    img {
       width: 220px;
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
+    .message {
+      margin-top: 24px;
+      font-size: 2.6rem;
+      background: rgba(255 255 255 / 0.15);
+      padding: 12px 24px;
+      border-radius: 12px;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
-  <img class="gif" src="https://media.giphy.com/media/FTGah7Mx3ss04PcasF/giphy.gif" alt="cute gif" />
+  <img src="https://media.giphy.com/media/FTGah7Mx3ss04PcasF/giphy.gif" alt="cute gif" />
   <div class="message">Volim te, princezo</div>
 </body>
 </html>
